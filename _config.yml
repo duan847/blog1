@@ -1,14 +1,14 @@
 # Site settings
-name: Less Or More
+name: 记录点滴
 email: luoyan35714@126.com
-author: Freud Kang
-url: http://www.hifreud.com
-resume_site: http://www.hifreud.com/Resume.io/
-github: https://github.com/luoyan35714/
+author: 七步
+url: 
+resume_site: 
+github: https://github.com/duan847/
 baseurl: "/blog"
-description: Actually, less is more!
+description: 记录点滴，整理思绪
 meta_description: 七步;个人博客;程序员;IT;JAVA;
-motto: It's our wits that make us men.
+motto: 天行健君子以自强不息.
 banner: 古七步断肠散。
 
 #permalink: /:categories/:year/:month/:day/:title/
@@ -17,7 +17,7 @@ paginate: 10
 
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
-github_username: luoyan35714
+github_username: duan847
 
 # Build settings
 markdown: kramdown
