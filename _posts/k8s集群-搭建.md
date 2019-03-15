@@ -22,7 +22,6 @@ hostnamectl set-hostname work2
 
 ## 主节点docker安装&启动rancher
 sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:/var/lib/rancher rancher/rancher
-sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:/var/lib/rancher rancher/rancher:v2.2.0-alpha6
 ## 浏览器访问https://192.168.1.40:444，网页打开后设置admin的密码
 
 ## 如果出现找不到镜像的错误：Error: No such image: rancher/hyperkube:v1.11.6-rancher1。可能是由于网速较慢导致，耐性等待。也可以选择手动执行：
