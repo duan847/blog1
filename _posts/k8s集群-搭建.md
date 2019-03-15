@@ -9,7 +9,7 @@ tag: k8s;容器;
 * content
 {:toc}
 
-
+```
 ## 关闭防火墙
 systemctl stop firewalld.service & systemctl disable firewalld.service
 ## 安装docker，使用官方的安装脚本安装，启动&加入开机启动docker服务
@@ -30,3 +30,4 @@ docker run -d rancher/hyperkube:v1.11.6-rancher1
 
 ## 如果docker容器启动失败，重启电脑reboot
 
+```
