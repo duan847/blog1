@@ -2,7 +2,7 @@
 layout: post
 title:  "k8s集群-使用rancher快速搭建"
 date:   2019-3-15 13:09:01 +0800
-categories: 技术
+categories: document
 tag: k8s;容器;
 ---
 
