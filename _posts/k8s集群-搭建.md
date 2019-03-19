@@ -9,6 +9,7 @@ tag: k8s;容器;
 * content
 {:toc}
 
+
 ```
 ## 关闭防火墙
 systemctl stop firewalld.service & systemctl disable firewalld.service
