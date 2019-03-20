@@ -79,10 +79,19 @@ sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:
 `mvn install`
 4. 在docker所在主机重新保存镜像
 ```shell
-docker ps -a 
+docker commit -p $(docker ps -q --filter name=maven) maven:v1
 ```
 5. 镜像上传到Docker私有仓库
+```
+docker tag maven:v1 192.168.1.40:28286/maven:v1
 
+## 客户端使用（pull，push）需要设置，不然会报错
+echo '{ "insecure-registries":["192.168.1.40:28286"] }' > /etc/docker/daemon.json
+systemctl restart docker
+
+## 上传镜像
+docker push 192.168.1.40:28286/maven:v1
+```
 
 #### 制作包含项目依赖的node镜像
 
