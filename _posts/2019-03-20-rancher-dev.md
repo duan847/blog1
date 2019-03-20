@@ -84,7 +84,7 @@ sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:
 docker commit -p $(docker ps -q --filter name=maven) maven:v1
 ```
 
-5. 镜像上传到Docker私有仓库
+5. 镜像上传到Docker私有仓库：
 ``` shell
 docker tag maven:v1 192.168.1.40:28286/maven:v1
 
