@@ -7,9 +7,9 @@ tag: rancher
 ---
 
 
-## 结构图
+## 一、结构图
 
-## 容器化工具Docker
+## 二、容器化工具Docker
 ### 简介
 ### 作用
 ### 安装
@@ -22,7 +22,7 @@ curl -fsSL get.docker.com -o get-docker.sh && sudo sh get-docker.sh --mirror Ali
 
 ### 配置
 
-## 代码私有仓库Gitlab
+## 三、代码私有仓库Gitlab
 ### 简介
 ### 作用
 ### 安装
@@ -38,7 +38,7 @@ Gitlab首次启动需要一段时间，安静等待...
 
 ### 使用
 
-## 容器管理Rancher
+## 四、容器管理Rancher
 ### 简介
 ### 安装
 
