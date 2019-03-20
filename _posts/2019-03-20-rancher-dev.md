@@ -13,7 +13,7 @@ tag: rancher
 ### 简介
 ### 作用
 ### 安装
-```
+``` shell
 
 ## 使用官方的安装脚本安装，启动&加入开机启动docker服务
 curl -fsSL get.docker.com -o get-docker.sh && sudo sh get-docker.sh --mirror Aliyun && sudo systemctl start docker && sudo systemctl enable docker
@@ -27,7 +27,7 @@ curl -fsSL get.docker.com -o get-docker.sh && sudo sh get-docker.sh --mirror Ali
 ### 作用
 ### 安装
 
-```
+``` shell
 ## docker中安装&启动gitlab，gitlab产生的数据存到本地/srv/gitlab
 docker run --detach --hostname 192.168.1.40 --publish 443:443 --publish 80:80 --publish 23:22 --name gitlab --restart always --volume /srv/gitlab/config:/etc/gitlab --volume /srv/gitlab/logs:/var/log/gitlab --volume /srv/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce
 ```
@@ -52,7 +52,7 @@ Gitlab首次启动需要一段时间，安静等待...
 | Centos7.5 | 192.168.1.42/work2 | 2cpu、4g内存 |
 
 ##### 安装
-```shell
+``` shell
 
 ## 192.168.1.40安装&启动Rancher
 sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:/var/lib/rancher rancher/rancher
@@ -70,19 +70,22 @@ sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:
 ### 持续集成CI/CD自动部署负载均衡
 
 #### 制作包含项目依赖jar的maven镜像
-1. 下载&运行&进入maven镜像
+1. 下载&运行&进入maven镜像：
 `docker run -it maven:3-jdk-8-alpine /bin/bash`
 
-2. 把项目的pom.xml复制到镜像
+2. 把项目的pom.xml复制到镜像：
 `vi pom.xml`
-3. 使用mvn install安装依赖的jar到镜像
+
+3. 使用mvn install安装依赖的jar到镜像：
 `mvn install`
-4. 在docker所在主机重新保存镜像
-```shell
+
+4. 在docker所在主机重新保存镜像：
+``` shell
 docker commit -p $(docker ps -q --filter name=maven) maven:v1
 ```
+
 5. 镜像上传到Docker私有仓库
-```
+``` shell
 docker tag maven:v1 192.168.1.40:28286/maven:v1
 
 ## 客户端使用（pull，push）需要设置，不然会报错
@@ -98,8 +101,7 @@ docker push 192.168.1.40:28286/maven:v1
 
 
 
-
-
+---
 [ip]: 设置ip：
 `vi /etc/sysconfig/network-scripts/ifcfg-ens33`
 内容基本如下
