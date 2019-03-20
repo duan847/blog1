@@ -53,10 +53,8 @@ Gitlab首次启动需要一段时间，安静等待...
 
 ##### 安装
 ``` shell
-
 ## 192.168.1.40安装&启动Rancher
 sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:/var/lib/rancher rancher/rancher
-
 ```
 
 ### 添加私有k8s集群
@@ -84,13 +82,14 @@ sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:
 docker commit -p $(docker ps -q --filter name=maven) maven:v1
 ```
 
-5. 镜像上传到Docker私有仓库：
+5. 镜像上传到Docker私有仓库
 ``` shell
-docker tag maven:v1 192.168.1.40:28286/maven:v1
-
-## 客户端使用（pull，push）需要设置，不然会报错
+## docker私有仓库非https，客户端使用（pull，push）需要设置，不然会报错
 echo '{ "insecure-registries":["192.168.1.40:28286"] }' > /etc/docker/daemon.json
 systemctl restart docker
+
+## 打标签
+docker tag maven:v1 192.168.1.40:28286/maven:v1
 
 ## 上传镜像
 docker push 192.168.1.40:28286/maven:v1
