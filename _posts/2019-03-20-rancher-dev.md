@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2014-11-17 13:31:01 +0800
+title:  "持续集成Docker + Gitlab + Rancher（nfs + jenkins） + k8s"
+date:   2019-03-20 18:56:00 +0800
 categories: 技术
 tag: rancher
 ---
