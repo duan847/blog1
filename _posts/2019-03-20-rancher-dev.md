@@ -57,17 +57,17 @@ Gitlab首次启动需要一段时间，安静等待...
 sudo docker run -d --restart=unless-stopped -p 81:80 -p 444:443 -v /opt/rancher:/var/lib/rancher rancher/rancher
 ```
 
-### 添加私有k8s集群
+### 1. 添加私有k8s集群
 
-### 配置持久化存储NFS
+### 2. 配置持久化存储NFS
 
-### Docker私有仓库
+### 3. Docker私有仓库
 
-### 部署负载均衡
+### 4. 部署负载均衡
 
-### 持续集成CI/CD自动部署负载均衡
+### 5. 持续集成CI/CD自动部署负载均衡
 
-#### 制作包含项目依赖jar的maven镜像
+#### 5.1. 制作包含项目依赖jar的maven镜像
 1. 下载&运行&进入maven镜像：
 `docker run -it maven:3-jdk-8-alpine /bin/bash`
 
@@ -96,7 +96,7 @@ docker tag maven:v1 192.168.1.40:28286/maven:v1
 docker push 192.168.1.40:28286/maven:v1
 ```
 
-#### 制作包含项目依赖的node镜像
+#### 5.2. 制作包含项目依赖的node镜像
 
 
 
